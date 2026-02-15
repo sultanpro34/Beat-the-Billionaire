@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Level 1 – Beat Bezos{% endblock %}
+
+{% block main %}
+
+<h1>Level 1: Beat Jeff Bezos (150B)</h1>
+
+<!-- Timer -->
+<div id="timer-box">
+    ⏳ Time Left: <span id="timer">40</span> seconds
+</div>
+
+<!-- Card Grid -->
+<div class="grid" id="card-grid">
+    {% for i in range(24) %}
+        <div class="card" data-index="{{ i }}">
+            <div class="card-inner">
+                <div class="card-front"></div>
+                <div class="card-back"></div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Action Button (optional) -->
+<button id="choose-btn" style="display: none;">
+    Choose Your Cards
+</button>
+
+<!-- Message -->
+<div id="message"></div>
+
+<!-- Game Script -->
+<script src="{{ url_for('static', filename='js/game.js') }}"></script>
+
+{% endblock %}

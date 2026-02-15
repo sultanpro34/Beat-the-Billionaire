@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}Result{% endblock %}
+
+{% block main %}
+
+<div class="result-container">
+    <div class="result-card">
+
+        {% if status == "win" %}
+            <h1 class="win">🎉 YOU WIN!</h1>
+            <p>You beat Jeff Bezos!</p>
+        {% else %}
+            <h1 class="lose">❌ YOU LOSE</h1>
+            <p>Jeff Bezos is still richer 😈</p>
+        {% endif %}
+
+        <div class="result-score">
+            Your Total Worth: <strong>{{ score }}B</strong>
+        </div>
+
+        <a href="/level1">
+            <button class="result-btn">Play Again</button>
+        </a>
+
+        <br><br>
+
+        <a href="/" class="back-link">← Back to Home</a>
+
+    </div>
+</div>
+
+{% endblock %}
